@@ -1,9 +1,9 @@
 # m-ground_detector
 
-**Implementation of the m-ground_detector as described in the paper "IMLS-SLAM: scan-to-model matching based on 3D data", of Deschaud et al. (ICRA 2018).**
+**Implementation of the m-ground_detector as described in the paper "Fast segmentation of 3D point clouds: A paradigm on LiDAR data for autonomous vehicle applications", of Zermas et al. (ICRA 2017).**
 
 ## 0. Features
-In order to ensure the spatial uniformity of plane point extraction, this algorithm uses kd-tree to control the distance of sampling points. In addition, openmp is used to accelerate metric calculation and feature extraction steps. For the case of 20000 3D point inputs, the average time cost of algorithm is less than 30ms.
+Adaptive detection of the long axis of a single frame point cloud. Improve the ability of ground detection algorithms to cope with slope changes through multi-threaded block processing. For 64 line laser point cloud input, the algorithm can achieve an average time of less than 15ms.
 
 ## 1. Prerequisites
 ### 1.1 **Ubuntu** and **ROS**
@@ -22,8 +22,8 @@ Clone the repository and catkin_make:
 
 ```
     cd ~/$A_ROS_DIR$/src
-    git clone https://github.com/Hero941215/m-imls_sample
-    cd m-imls_sample
+    git clone https://github.com/Hero941215/m-ground_detector
+    cd m-ground_detector
     mkdir build
     cd build
     cmake ..
@@ -37,4 +37,4 @@ Clone the repository and catkin_make:
 
 ## 4. Acknowledgments
 
-Thanks for "IMLS-SLAM: scan-to-model matching based on 3D data"(Deschaud et al.).
+Thanks for [Run_based_segmentation](https://github.com/VincentCheungM/Run_based_segmentation).
